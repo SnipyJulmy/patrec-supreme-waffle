@@ -19,13 +19,13 @@ def create_training_set(root_train, transcription_file, train_file):
             training_dict[split[1]].append(image)
     return training_dict
 
-def create_validation_set(root_valid):
-    validation_dict = {}
-    dirs = os.listdir( root_valid )
+def create_set(root_data):
+    result_dict = {}
+    dirs = os.listdir( root_data )
     for file in dirs:
-        image = get_boolean_image(root_valid + '/' + file)
-        validation_dict[file.split('.')[0]] = image
-    return validation_dict
+        image = get_boolean_image(root_data + '/' + file)
+        result_dict[file.split('.')[0]] = image
+    return result_dict
 
 def get_transcriptions(transcription_file):
     transcriptions_dict = {}
