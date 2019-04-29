@@ -5,7 +5,7 @@ import numpy as np
 from collections import defaultdict
 
 
-class DTW():
+class DTW:
     def __init__(self, image):
         self.image = image
         self.image_features = np.array(features.calculate_image_features(self.image))
