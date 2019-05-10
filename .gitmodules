@@ -1,0 +1,3 @@
+[submodule "s04/PatRec17_KWS_Data"]
+	path = s04/PatRec17_KWS_Data
+	url = git@github.com:lunactic/PatRec17_KWS_Data.git
