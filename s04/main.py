@@ -50,6 +50,6 @@ for key, image in validation_dict.items():
         output_line.append(score)
     output_lines.append(output_line)
     break
-with open("output3.csv", "w") as f:
+with open("output3.csv", "w", newline='') as f:
     writer = csv.writer(f)
     writer.writerows(output_lines)
