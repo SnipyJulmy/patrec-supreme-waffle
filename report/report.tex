@@ -2,6 +2,8 @@
 
 \usepackage{amsmath}
 \usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{hyperref}
 
 \setlength{\parindent}{0pt}
 \date{\today}
@@ -33,6 +35,24 @@
 \section*{Tasks}
 
 \subsection*{SVM}
+
+The SVM task was achieved by using the
+sklearn\footnote{\url{https://scikit-learn.org/stable/modules/svm.html}}
+library, which is very simple to use and provides a lot of examples for a better
+understanding.
+
+In order to find the best parameter, we used a grid search approach with various
+parameters and display the heatmaps of the results for each tested kernel (see below).
+
+\begin{minipage}{0.49\textwidth}
+  \includegraphics[width=0.8\textwidth]{figures/hm1.pdf}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\textwidth}
+  \includegraphics[width=0.8\textwidth]{figures/hm2.pdf}
+\end{minipage}
+
+Using this, we were able to obtain a $97.9\%$ accuracy.
 
 \subsection*{MLP}
 
