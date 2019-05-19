@@ -54,9 +54,28 @@ parameters and display the heatmaps of the results for each tested kernel (see b
 
 Using this, we were able to obtain a $97.9\%$ accuracy.
 
-\subsection*{MLP}
+\subsection*{MLP and CNN}
 
-\subsection*{CNN}
+The MLP and CNN tasks where both achieved by using the
+pytorch\footnote{\url{https://pytorch.org/}} library. We also performed a
+gridsearch like approach to find the best parameters for each of them.
+
+For the MLP, we finally got a model with $512$ hidden neuron and a learning rate
+of $0.001$, other learning rate where not stable at all for this task.
+
+We also go a learning rate of $0.001$ for the CNN model since higher one (like
+$0.002$ or $0.007$) showed rollercoaster like curve :
+
+\vspace*{0.2cm}
+
+\begin{minipage}{0.49\textwidth}
+  \begin{center}
+    \fbox{\includegraphics[width=0.6\textwidth]{figures/cnn-curve.png}}
+  \end{center}
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+Finally, we achieved a accuracy of $97\%$ for the MLP and $97.8\%$ for the CNN.
+\end{minipage}
 
 \subsection*{Keyword spotting}
 
