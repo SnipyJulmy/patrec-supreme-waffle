@@ -28,7 +28,7 @@ class DTW():
     def calculate_cost(self, features):
         features_compare = np.array(features)
         yy = np.asanyarray(features_compare, dtype='float')
-        distance, path = fastdtw(self.xx, yy, dist=dist2.euclidean)
-        #distance = self.__dtw(self.xx, yy, dist2.euclidean)
+        #distance, path = fastdtw(self.xx, yy, dist=dist2.euclidean)
+        distance = self.__dtw(self.xx, yy, dist2.euclidean)
         return distance
             

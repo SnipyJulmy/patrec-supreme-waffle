@@ -151,7 +151,7 @@ def find_best_threshold(users, users_enrollment_features, users_verification_fea
         print("Accuracy for "+str(threshold)+": ", (number_correct/len(results)))
         # best = 2500
 
-def compute_dtw_and_save(users, users_enrollment_features, users_verification_features, users_mean_enrollment_scores,  ground_truth):
+def compute_dtw_and_save(users, users_enrollment_features, users_verification_features, users_mean_enrollment_scores):
     for user in users: 
         results = {}
         i = 1
@@ -191,14 +191,14 @@ def main():
     
     users_enrollment = get_users_enrollment(users)
     users_enrollment_features = get_users_enrollment_features(users_enrollment)
-    #users_mean_enrollment_scores = get_users_mean_enrollment_scores(users_enrollment_features)
-    #np.save('users_mean_enrollment_scores',users_mean_enrollment_scores)
-    users_mean_enrollment_scores = np.load('users_mean_enrollment_scores.npy')
-    users_mean_enrollment_scores = users_mean_enrollment_scores.item()
+    users_mean_enrollment_scores = get_users_mean_enrollment_scores(users_enrollment_features)
+    np.save('users_mean_enrollment_scores',users_mean_enrollment_scores)
+    #users_mean_enrollment_scores = np.load('users_mean_enrollment_scores.npy')
+    #users_mean_enrollment_scores = users_mean_enrollment_scores.item()
     users_verification = get_users_verification(users)
     users_verification_features = get_users_verification_features(users_verification)
-    ground_truth = get_ground_truth('gt.txt')
-    #compute_dtw_and_save(users, users_enrollment_features, users_verification_features, users_mean_enrollment_scores, ground_truth)
+    #ground_truth = get_ground_truth('gt.txt')
+    compute_dtw_and_save(users, users_enrollment_features, users_verification_features, users_mean_enrollment_scores)
     #find_best_threshold(users, users_enrollment_features, users_verification_features, users_mean_enrollment_scores, ground_truth)
     write_to_csv(users)
     
