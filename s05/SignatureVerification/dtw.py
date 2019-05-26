@@ -1,7 +1,6 @@
 import scipy.spatial.distance as dist2
 import numpy as np
 from collections import defaultdict
-from fastdtw import fastdtw
 class DTW():
     def __init__(self, features):
         self.features = features
